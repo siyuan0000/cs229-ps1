@@ -1,38 +1,81 @@
-# CS229 Problem Set Instructions
+# CS229 Problem Set 1 - Machine Learning
 
+这是斯坦福大学CS229机器学习课程的作业1，包含以下内容：
 
-## Setup for Written Parts
+## 项目结构
 
-1. We have provided a LaTeX template in the `tex/` directory to make it easy to typeset your homework solutions.
-2. Every problem has its own directory (*e.g.,* `tex/featuremaps/` for Problem 1).
-3. Every subproblem has two files within the parent problem’s directory:
-  - The problem statement, *e.g.* `tex/featuremaps/01-degree-3-math.tex` for Problem 1(a)). You do not need to modify this.
-  - Your solution, *e.g.* `tex/featuremaps/01-degree-3-math-sol.tex` for your solution to Problem 1(a). You will need to modify these files (and the source files in `src` for coding parts).
-4. You can use the given `Makefile` to typeset your solution, or use an editor with built-in typesetting such as TeXShop (comes free with the standard [LaTeX distribution](https://www.latex-project.org/get/)) or [Texpad](https://www.texpad.com/) (separate download, not free).
+```
+ps1-full/
+├── src/                    # 源代码目录
+│   ├── doubledescent/      # 双下降现象实验
+│   ├── featuremaps/        # 特征映射实验
+│   ├── gd_convergence/     # 梯度下降收敛实验
+│   ├── implicitreg/        # 隐式正则化实验
+│   └── lwr/               # 局部加权回归
+├── tex/                    # LaTeX文档
+│   ├── doubledescent/      # 双下降相关文档
+│   ├── featuremaps/        # 特征映射相关文档
+│   ├── gd_convergence/     # 梯度下降相关文档
+│   ├── implicitreg/        # 隐式正则化相关文档
+│   └── lwr/               # 局部加权回归相关文档
+├── environment.yml         # Conda环境配置
+└── README.md              # 项目说明
+```
 
+## 环境设置
 
-## Setup for Coding Parts
+使用Conda创建环境：
 
-1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  - Conda is a package manager that sandboxes your project’s dependencies in a virtual environment
-  - Miniconda contains Conda and its dependencies with no extra packages by default (as opposed to Anaconda, which installs some extra packages)
-2. Extract the zip file and run `conda env create -f environment.yml` from inside the extracted directory.
-  - This creates a Conda environment called `cs229`
-3. Run `source activate cs229`
-  - This activates the `cs229` environment
-  - Do this each time you want to write/test your code
-4. (Optional) If you use PyCharm:
-  - Open the `src` directory in PyCharm
-  - Go to `PyCharm` > `Preferences` > `Project` > `Project interpreter`
-  - Click the gear in the top-right corner, then `Add`
-  - Select `Conda environment` > `Existing environment` > Button on the right with `…`
-  - Select `/Users/YOUR_USERNAME/miniconda3/envs/cs229/bin/python`
-  - Select `OK` then `Apply`
-5. Notice some coding problems come with `util.py` file. In it you have access to methods that do the following tasks:
-  - Load a dataset in the CSV format provided in the problem
-  - Add an intercept to a dataset (*i.e.,* add a new column of 1s to the design matrix)
-  - Plot a dataset and a linear decision boundary. Some plots might require modified plotting code, but you can use this as a starting point.
-7. Notice that start codes are provided in each problem directory (e.g. `gda.py`, `posonly.py`)
-  - Within each starter file, there are highlighted regions of the code with the comments ** START CODE HERE ** and ** END CODE HERE **. You are strongly suggested to make your changes only within this region. You can add helper functions within this region as well.
-8. Once you are done with all the code changes, run `make_zip.py` to create a `submission.zip`.
-  - You must upload this `submission.zip` to Gradescope.
+```bash
+conda env create -f environment.yml
+conda activate cs229-ps1
+```
+
+## 实验内容
+
+1. **双下降现象 (Double Descent)**: 研究模型复杂度与泛化性能的关系
+2. **特征映射 (Feature Maps)**: 探索不同特征映射对模型性能的影响
+3. **梯度下降收敛 (GD Convergence)**: 分析梯度下降算法的收敛性质
+4. **隐式正则化 (Implicit Regularization)**: 研究优化算法中的隐式正则化效应
+5. **局部加权回归 (Locally Weighted Regression)**: 实现和优化局部加权回归算法
+
+## 运行实验
+
+每个实验目录都包含相应的Python脚本和数据集：
+
+```bash
+# 运行双下降实验
+cd src/doubledescent
+python doubledescent.py
+
+# 运行特征映射实验
+cd src/featuremaps
+python featuremap.py
+
+# 运行梯度下降收敛实验
+cd src/gd_convergence
+python experiment.py
+
+# 运行隐式正则化实验
+cd src/implicitreg
+python linear.py
+python qp.py
+
+# 运行局部加权回归实验
+cd src/lwr
+python lwr.py
+python tau.py
+```
+
+## 生成报告
+
+使用LaTeX编译生成PDF报告：
+
+```bash
+cd tex
+make
+```
+
+## 许可证
+
+本项目仅用于学习目的，遵循斯坦福大学CS229课程的学术诚信政策。
