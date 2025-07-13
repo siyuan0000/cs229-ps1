@@ -1,2 +1,19 @@
 \begin{answer}
+Let $\theta = (\theta_1, \ldots, \theta_d)^\top \in \mathbb{R}^d$ and $\beta_i > 0$ for all $i$.
+\[
+\theta_i^{[t]} = \theta_i^{[t-1]} - \alpha \cdot \beta_i \theta_i^{[t-1]} = (1 - \alpha \beta_i)\theta_i^{[t-1]}
+\]
+\[
+\theta_i^{[t]} = (1 - \alpha \beta_i)^t \cdot \theta_i^{[0]}
+\]
+\[
+\lim_{t \to \infty} \theta_i^{[t]} = 0 \quad \Longleftrightarrow \quad |1 - \alpha \beta_i| < 1
+\Rightarrow 0 < \alpha < \frac{2}{\beta_i} \quad \forall i
+\]
+\[
+\boxed{\theta^\dagger = \mathbf{0} = \theta^*}
+\]
+\[
+\Rightarrow\boxed{0 < \alpha < \frac{2}{\max_i \beta_i}}
+\]
 \end{answer}

@@ -1,2 +1,61 @@
+
 \begin{answer}
+i. To multiply the loss of each x, $W\in\mathbb{R}^{m\times m}$ must be \textbf{diagonal} with
+      \[
+          W_{ii}=\frac{w^{(i)}}{2},\qquad W_{ij}=0\;(i\neq j)
+      \]
+$$
+\begin{aligned}
+J(\theta) &= (X\theta - y)^\top W (X\theta - y) \\
+&= \frac{1}{2} \sum_{i=1}^m w^{(i)} \left[(X\theta - y)^{(i)}\right]^2 \\
+&= \frac{1}{2} \sum_{i=1}^m w^{(i)} \left[\theta^\top x^{(i)} - y^{(i)}\right]^2 \\
+&= \sum_{i=1}^{m}\frac{w^{(i)}}{2} \bigl(\theta^\top x^{(i)} - y^{(i)}\bigr)^2
+\end{aligned}
+$$
+
+ii. $$
+\text{Set } \nabla_{\theta} J(\theta) = 0:
+\quad X^T W X \theta = X^T W y
+$$
+$$
+\begin{aligned}
+\nabla_{\theta} J(\theta)
+&= \nabla_{\theta} \left( \frac{1}{2}(X\theta - y)^T W (X\theta - y) \right) \\
+&= \nabla_{\theta} \left( \frac{1}{2} \theta^T X^T W X \theta - \theta^T X^T W y + \frac{1}{2} y^T W y \right) \\
+&= X^T W X \theta - X^T W y\\
+&=0
+\end{aligned}
+$$
+$$
+\text{Solution:}\quad \boxed{\theta^\ast = (X^T W X)^{-1} X^T W y}
+$$
+
+iii. $$
+\begin{aligned}
+\text{Assume:}\quad & y^{(i)} \sim \mathcal{N}(\theta^T x^{(i)}, (\sigma^{(i)})^2) \\
+\Rightarrow &\quad p(y^{(i)} | x^{(i)}; \theta) = \frac{1}{\sqrt{2\pi} \sigma^{(i)}} \exp\left( -\frac{(y^{(i)} - \theta^T x^{(i)})^2}{2 (\sigma^{(i)})^2} \right)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\log p(y^{(1)},\dots,y^{(m)} | X;\theta)
+&= \sum_{i=1}^m \log p(y^{(i)} | x^{(i)}; \theta) \\
+&= \sum_{i=1}^m \left[ -\frac{1}{2} \log(2\pi) - \log \sigma^{(i)} - \frac{1}{2} \cdot \frac{(y^{(i)} - \theta^T x^{(i)})^2}{(\sigma^{(i)})^2} \right] \\
+&= \text{const} - \frac{1}{2} \sum_{i=1}^m \frac{(y^{(i)} - \theta^T x^{(i)})^2}{(\sigma^{(i)})^2}
+\end{aligned}
+$$
+$$
+\begin{aligned}
+\text{Maximizing log-likelihood } &L(\theta) \Leftrightarrow \min_\theta \sum_{i=1}^m \frac{(y^{(i)} - \theta^T x^{(i)})^2}{(\sigma^{(i)})^2} \\
+&= \min_\theta \sum_{i=1}^m w^{(i)} (y^{(i)} - \theta^T x^{(i)})^2 \quad \text{with } w^{(i)} = \frac{1}{(\sigma^{(i)})^2}
+\end{aligned}
+$$
+$$
+\Rightarrow \boxed{ w^{(i)} = \frac{1}{(\sigma^{(i)})^2}}
+$$
+
+
+
 \end{answer}
+

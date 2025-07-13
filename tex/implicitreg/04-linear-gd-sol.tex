@@ -1,3 +1,49 @@
 
 \begin{answer}
+Zero init: $\beta^{(0)}=0.$
+
+Induction hypothesis: $\beta^{(t-1)} = X^{\top} v^{(t-1)}$ for some $v^{(t-1)}\in\mathbb{R}^{n}$.
+
+Gradient step:
+
+$$
+\beta^{(t)}=\beta^{(t-1)}-\frac{\eta}{n}\,X^{\top}\!\bigl(X\beta^{(t-1)}-\vec y\bigr)
+          =X^{\top}v^{(t-1)}-\frac{\eta}{n}\,X^{\top}\!\bigl(X X^{\top}v^{(t-1)}-\vec y\bigr)
+          =X^{\top}v^{(t)}, 
+$$
+
+where
+
+$$
+v^{(t)} \;=\; v^{(t-1)}-\frac{\eta}{n}\,\bigl(X X^{\top}v^{(t-1)}-\vec y\bigr)\in\mathbb{R}^{n}.
+$$
+
+Thus $\beta^{(t)}$ remains a linear combination of $\{x^{(i)}\}$ for all $t\ge0$.
+
+
+
+Limit point
+
+Assume convergence: $\displaystyle\lim_{t\to\infty}\beta^{(t)}=\hat\beta$ with $J(\hat\beta)=0$.
+
+By span property
+
+$$
+\hat\beta = X^{\top}\hat v\quad\text{for some }\hat v\in\mathbb{R}^{n}.
+$$
+
+Zero loss: $X\hat\beta = X X^{\top}\hat v = \vec y.$
+
+Invertibility of $X X^{\top}$:
+
+$$
+\hat v = (X X^{\top})^{-1}\vec y.
+$$
+
+Therefore
+
+$$
+\boxed{\hat\beta = X^{\top}(X X^{\top})^{-1}\vec y = \rho}
+$$
+ gradient descent with zero initialization converges to the minimum-norm solution.
 \end{answer}

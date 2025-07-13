@@ -1,2 +1,9 @@
 \begin{answer}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.55\linewidth]{featuremaps/figures/overfitting_small.png}
+  \caption{polynomial regression(small dataset)}
+  \label{fig:polynomial regression}
+\end{figure}
+With only a handful of points the model has much less to “anchor” it, so every extra parameter matters a lot. At low k the curve stays flat and misses most of the ups and downs (i.e. underfit). As soon as k grows—especially beyond k = 5—the polynomial tries to hit every sample exactly, produces huge spikes, and even shoots far outside the visible y-range. Different k values now give very different shapes because the data are too sparse to keep them consistent. In short, a small training set makes high-degree models swing wildly, while low-degree ones remain too simple.
 \end{answer}

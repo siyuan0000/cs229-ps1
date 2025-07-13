@@ -1,3 +1,56 @@
 
 \begin{answer}
+$$
+\text{let}\quad 
+\beta=\theta^{\odot 2}-\phi^{\odot 2},
+\qquad 
+J(\theta,\phi)=\frac{1}{4n}\|X\beta-\vec y\|_{2}^{2}.
+$$
+$$
+J(\theta,\phi)=0
+\;\Longleftrightarrow\;
+X\beta=\vec y .
+$$
+$$
+\beta
+=
+X^{\top}(XX^{\top})^{-1}\vec y+\zeta,
+\qquad
+X\zeta=0 ,
+\qquad
+\zeta\in\ker X .
+$$
+
+(this is the result of part (a) with $n<d$)
+
+
+$$
+\text{for any}\;
+s\in\mathbb R^{d},\;s\ge |\,\beta\,|\;\text{(element-wise)}
+$$
+
+$$
+\theta^{\odot 2}=\tfrac12(\beta+s),
+\qquad
+\phi^{\odot 2}=\tfrac12(s-\beta).
+$$
+
+$$
+\theta^{\odot 2}-\phi^{\odot 2}=\beta,
+\qquad
+X\beta=\vec y,
+\qquad
+J(\theta,\phi)=0.
+$$
+
+
+$$
+\zeta\in\ker X,\;\;s\ge|\,\beta\,|
+\;\Longrightarrow\;
+(\theta,\phi)\;\text{feasible}.
+\quad
+\dim\ker X>0\;(n<d)
+\;\Longrightarrow\;
+\text{infinitely many }(\theta,\phi).
+$$
 \end{answer}

@@ -1,2 +1,32 @@
 \begin{answer}
+Compute gradient and Hessian:
+\[
+\nabla J(\theta)=X^{\top}(X\theta-y),\qquad 
+\nabla^{2}J(\theta)=X^{\top}X=:H .
+\]
+
+Since
+\[
+v^{\top}Hv=\|Xv\|^{2}\ge0\quad\forall\,v,
+\]
+we have \(H\succeq0\); hence \(J(\theta)\) is convex.
+Its eigen-values lie in \([0,\beta_{\max}]\).
+
+From d we already know:
+
+\[
+\boxed{\;
+J\ \text{convex},\ H\preceq\beta_{\max}I,\ 
+0<\alpha<\frac{1}{\beta_{\max}}
+\;\Longrightarrow\;
+J(\theta^{[t]})\text{ converges as }t\to\infty.
+\;}
+\]
+
+Therefore, for any learning rate
+\(\displaystyle 0<\alpha<\frac{1}{\beta_{\max}}\),
+gradient descent on 
+\(J(\theta)=\tfrac12\lVert X\theta-y\rVert_2^{2}\)
+produces a loss sequence that decreases monotonically
+and approaches a finite limit.
 \end{answer}

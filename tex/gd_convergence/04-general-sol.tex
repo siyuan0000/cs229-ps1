@@ -1,2 +1,40 @@
 \begin{answer}
+Let $\theta^{[t+1]}=\theta^{[t]}-\alpha\nabla J(\theta^{[t]})$ with  
+$0<\alpha<\tfrac{1}{\beta_{\max}}$ and recall the Taylor expansion  
+for some $c\in[0,1]$:
+\[
+  J(y)=J(x)+\nabla J(x)^{\top}(y-x)
+        +\tfrac12 (y-x)^{\top}\nabla^{2}J\!\bigl(x+c(y-x)\bigr)(y-x).
+\]
+
+when $x=\theta^{[t]}$, $y=\theta^{[t+1]}$:
+
+\[
+\begin{aligned}
+J(\theta^{[t+1]})
+ &= J(\theta^{[t]})
+    -\alpha\|\nabla J(\theta^{[t]})\|_{2}^{2}
+    +\frac{\alpha^{2}}{2} 
+        \nabla J(\theta^{[t]})^{\top}
+        \nabla^{2}J\!\bigl(\theta^{[t]}+c(\theta^{[t+1]}-\theta^{[t]})\bigr)
+        \nabla J(\theta^{[t]}) \\[4pt]
+ &\le J(\theta^{[t]})
+      -\alpha\Bigl(1-\frac{\alpha\beta_{\max}}{2}\Bigr)
+      \|\nabla J(\theta^{[t]})\|_{2}^{2},
+\end{aligned}
+\]
+because 
+$\lambda_{\max}\bigl(\nabla^{2}J(\cdot)\bigr)\le\beta_{\max}$ by assumption.
+
+\textbf{Strict decrease}
+
+Since $0<\alpha<\tfrac{1}{\beta_{\max}}$ implies 
+$1-\frac{\alpha\beta_{\max}}{2}>0$,
+\[
+  \nabla J(\theta^{[t]})\neq 0
+  \;\;\Longrightarrow\;\;
+  J(\theta^{[t+1]})<J(\theta^{[t]}).
+\]
+Thus $\{J(\theta^{[t]})\}$ is strictly decreasing while bounded
+below, so it converges to a finite limit.
 \end{answer}

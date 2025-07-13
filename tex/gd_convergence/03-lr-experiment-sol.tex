@@ -1,2 +1,25 @@
 \begin{answer}
+\textbf{(i)}  
+"All sanity checks passed."
+The range of learning rate is (0, 0.5).
+when lr ∈ (0, 0.5), the elements of \(\theta\) are getting close to 0, and the loss function is converged.
+
+
+\textbf{(ii)}  
+We rotated matrix $A$ and ran GD using various learning rates. The observed trajectories are shown below:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{gd_convergence/figures/trajectories.png}
+  \caption{Trajectories of GD with original matrix $A$ under various learning rates.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{gd_convergence/figures/trajectories_rotated.png}
+  \caption{Trajectories of GD with rotated matrix $A$ under same learning rates.}
+\end{figure}
+Rotation does not affect convergence, but it changes the visual path the algorithm takes.
+
+
 \end{answer}

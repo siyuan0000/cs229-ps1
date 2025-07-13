@@ -1,7 +1,7 @@
 \item \points{12} {\bf Double Descent on Linear Models}
 
 \textbf{Background: } 
-In this question, you will empirically observe the sample-wise double descent phenomenon. That is, the validation losses of some learning algorithms or estimators do not monotonically decrease as we have more training examples, but instead have a curve with two U-shaped parts. The double descent phenomenon can be observed even for simple linear models. In this question, we consider the following setup. Let $\{(x^{(i)},y^{(i)})\}_{i=1}^{n}$ be the training dataset. Let $X\in\R^{n\times d}$ be the matrix representing the inputs (i.e., the $i$-th row of $X$ corresponds to $x^{(i)})$), and $\vec{y}\in\R^{n}$ the vector representing the labels (i.e., the $i$-th row of $\vec{y}$ corresponds to $y^{(i)})$):
+In this question, you will empirically observe the sample-wise double descent phenomenon. That is, the validation losses of some learning algorithms or estimators do not monotonically decrease as we have more training examples, but instead have a curve with two U-shaped parts. The double descent phenomenon can be observed even for simple linear models. In this question, we consider the following setup. Let $\{(x^{(i)},y^{(i)})\}_{i=0}^{n}$ be the training dataset. Let $X\in\R^{n\times d}$ be the matrix representing the inputs (i.e., the $i$-th row of $X$ corresponds to $x^{(i)})$), and $\vec{y}\in\R^{n}$ the vector representing the labels (i.e., the $i$-th row of $\vec{y}$ corresponds to $y^{(i)})$):
 $$
 X=
 \begin{bmatrix}
@@ -24,17 +24,17 @@ In this question, we consider \emph{regularized} linear regression. For a regula
 
 \begin{enumerate}
  	\input{doubledescent/01-solution}
-	\ifnum\solutions=1 {
+	\ifnum\solutions=0 {
 	\input{doubledescent/01-solution-sol}
 } \fi
 
 \input{doubledescent/02-unreg}
-\ifnum\solutions=1 {
+\ifnum\solutions=0 {
 	\input{doubledescent/02-unreg-sol}
 } \fi
 
 	\input{doubledescent/03-reg}
-	\ifnum\solutions=1 {
+	\ifnum\solutions=0 {
 	\input{doubledescent/03-reg-sol}
 	} \fi
 

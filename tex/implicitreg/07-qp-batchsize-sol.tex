@@ -1,3 +1,15 @@
 
 \begin{answer}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{implicitreg/figures/implicitreg_quadratic_batchsize.png}
+  \caption{quadratic_batchsize}
+\end{figure}
+batchsize:  1 final validation error:  0.06774947147327164\\
+batchsize:  5 final validation error:  0.2184155490511722\\
+batchsize:  40 final validation error:  0.24142719572837726\\
+The model fits training data better when batch size is relatively high(40 best in this case).\\
+The model performs validation data better with lower error when batch size is relatively low(1 best in this case)\\
+Compared to (g), the SGD algorithm model performs better —especially when we train with batch 40 and check with batch 1\\
+\(\Longrightarrow\)SGD finds a solution that generalizes better.
 \end{answer}

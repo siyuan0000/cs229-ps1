@@ -1,2 +1,52 @@
-\begin{answer} 
+\begin{answer} \\
+
+$$
+J(\beta)=0\;\Longleftrightarrow\;X\beta=\vec y .
+$$
+
+\(\textbf{Sufficiency }\Longleftarrow{}\)
+$$
+\beta=X^{\top}(XX^{\top})^{-1}\vec y+\zeta,\qquad X\zeta=0 .
+$$
+$$
+X\beta
+=XX^{\top}(XX^{\top})^{-1}\vec y+X\zeta
+=\vec y+0
+=\vec y,
+$$
+so $J(\beta)=0$.
+
+\(\textbf{Necessity }\Longrightarrow{}\)
+
+zero cost: $X\beta=\vec y$.
+$$
+     \beta = X^\top(XX^\top)^{-1}y + \bigl(I - X^\top(XX^\top)^{-1}X\bigr)\beta .
+$$
+The projector $I - X^\top(XX^\top)^{-1}X$ sends any vector to the null-space of $X$, i.e.,
+$$
+\boxed{\;\zeta \;=\; \bigl(I - X^{\top}(XX^{\top})^{-1}X\bigr)\beta\;}
+$$
+so that
+$$
+\beta
+=X^{\top}(XX^{\top})^{-1}\vec y+\zeta .
+$$
+
+(check orthogonality)
+
+$$
+X\zeta
+=X\beta-XX^{\top}(XX^{\top})^{-1}X\beta
+=\vec y-\vec y
+=0 .
+$$
+
+Hence
+
+$$
+\boxed{\;
+\beta\text{ minimizes }J \iff
+\beta=X^{\top}(XX^{\top})^{-1}\vec y+\zeta,\;X\zeta=0
+\;}
+$$
 \end{answer}

@@ -1,2 +1,48 @@
 \begin{answer}
+1
+\textbf{(i)}  
+
+\[
+\theta^{[t]} = \theta^{[t-1]} - \alpha \nabla J(\theta^{[t-1]}) = (1 - \alpha \beta)\theta^{[t-1]}
+\]
+
+\textit{According to Hint 1}, we unroll the recurrence:
+\[
+\theta^{[t]} = (1 - \alpha \beta)^t \theta^{[0]}
+\]
+
+\textit{Hint 2}: convergence $\lim_{t \to \infty} \theta^{[t]} = 0$
+\[
+|1 - \alpha \beta| < 1 \quad \Rightarrow \quad 0 < \alpha < \frac{2}{\beta}
+\]
+Since $\theta^* = \arg\min J(\theta) = 0$
+\[
+\boxed{\theta^\dagger = 0 = \theta^*}
+\]
+
+\textbf{(ii)}  
+\[
+|\theta^{[T]} - \theta^\dagger| = |(1 - \alpha \beta)^T \theta^{[0]}| \leq \epsilon
+\]
+\[
+|1 - \alpha \beta|^T |\theta^{[0]}| \leq \epsilon
+\]
+Since \(1 - \alpha \beta < 1\) ,
+\[
+\boxed{T \geq \frac{\log(\epsilon / |\theta^{[0]}|)}{\log|1 - \alpha \beta|}}
+\]
+
+Therefore, the minimum number of iterations $T$ is
+\[
+T = \left\lceil \frac{\ln \frac{\epsilon}{|\theta^{[0]}|}}{\ln |1 - \alpha \beta|} \right\rceil.
+\]
+
+\textbf{Discussion:}  
+When $\alpha$ is too small, the convergence factor $|1 - \alpha \beta|$ is close to 1, and thus $\theta^{[t]}$ decays very slowly.  
+When $\alpha$ is close to $\frac{2}{\beta}$, the factor approaches 1 from the negative side, causing oscillations and slow convergence.  
+If $\alpha > \frac{2}{\beta}$, then $|1 - \alpha \beta| > 1$, and GD will diverge.  
+Therefore, inappropriate choices of $\alpha$ near $0$, near $\frac{2}{\beta}$, or beyond can lead to slower convergence or divergence.  
+The fastest convergence occurs when $\alpha = \frac{1}{\beta}$.
+
+
 \end{answer}

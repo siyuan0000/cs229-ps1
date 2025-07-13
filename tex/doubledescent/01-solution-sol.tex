@@ -1,3 +1,35 @@
 
 \begin{answer}
+$$
+J_{\lambda}(\beta)
+=\frac12\lVert X\beta-\vec y\rVert_{2}^{2}
+\;+\;\frac{\lambda}{2}\lVert\beta\rVert_{2}^{2}
+$$
+$$
+\text{since }\hat{\beta}_{\lambda}\;=\;\arg\min_{\beta\in\mathbb{R}^{d}} J_{\lambda}(\beta),
+$$
+$$
+\nabla_{\beta}J_{\lambda}(\beta)
+= X^{\top}(X\beta-\vec y)+\lambda\beta=0
+$$
+
+$$
+\Longrightarrow\;\bigl(X^{\top}X+\lambda I_{d\times d}\bigr)\,\beta
+= X^{\top}\vec y.
+$$
+
+$$
+z^{\top}\bigl(X^{\top}X+\lambda I\bigr)z
+=\lVert Xz\rVert_{2}^{2}+\lambda\lVert z\rVert_{2}^{2}>0
+\;\;(\forall z\ne0,\;\lambda>0)
+\;\Longrightarrow\;
+X^{\top}X+\lambda I \text{ invertible}.
+$$
+
+$$
+\boxed{\;
+\hat{\beta}_{\lambda}=
+\bigl(X^{\top}X+\lambda I_{d\times d}\bigr)^{-1}\,X^{\top}\vec y
+\;}
+$$
 \end{answer}

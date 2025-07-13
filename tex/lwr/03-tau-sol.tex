@@ -1,2 +1,73 @@
 \begin{answer}
+
+% ---------- (1) MSE table ----------
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+$\tau$ & \textbf{Validation MSE} \\
+\midrule
+0.03  & 0.0180 \\
+0.05  & 0.0124 \\
+0.10  & 0.0242 \\
+0.50  & 0.3305 \\
+1.00  & 0.4001 \\
+10.00 & 0.4337 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{Test MSE (best $\tau{=}0.05$):} 0.0124
+
+% ---------- (2) 2×3 grid of τ figures (τ=0.1 … 10.0) ----------
+\begin{figure}[htbp]
+  \centering
+  % row 1 -------------------------------------------------
+  \begin{subfigure}[t]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{lwr/figures/tau0.1.png}
+    \caption{tau0.1}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{lwr/figures/tau0.03.png}
+    \caption{tau0.03}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{lwr/figures/tau0.5.png}
+    \caption{tau0.5}
+  \end{subfigure}
+
+  \vspace{0.8em} % optional gap
+
+  % row 2 -------------------------------------------------
+  \begin{subfigure}[t]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{lwr/figures/tau0.05.png}
+    \caption{tau0.05}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{lwr/figures/tau1.0.png}
+    \caption{tau1.0}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.30\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{lwr/figures/tau10.0.png}
+    \caption{tau10.0}
+  \end{subfigure}
+
+  \caption{Predictions for six bandwidth choices $\tau \in \{0.1,0.03,0.5,0.05,1.0,10.0\}$. }
+  \label{fig:lwr_grid}
+\end{figure}
+
+% ---------- (3) single figure for best τ = 0.05 ----------
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.55\linewidth]{lwr/figures/best_tau0.05.png}
+  \caption{Best validation performer ($\tau = 0.05$). }
+  \label{fig:lwr_best_tau}
+\end{figure}
+
 \end{answer}

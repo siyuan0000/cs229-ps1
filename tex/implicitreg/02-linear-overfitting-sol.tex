@@ -1,2 +1,35 @@
 \begin{answer}
+let
+
+$$
+\rho=X^{\top}(XX^{\top})^{-1}\vec y,
+\qquad
+\beta=\rho+\zeta,
+\qquad
+X\zeta=0 .
+$$
+$$
+\|\beta\|_{2}^{2}
+=(\rho+\zeta)^{\!\top}(\rho+\zeta)
+=\rho^{\top}\rho+2\rho^{\top}\zeta+\zeta^{\top}\zeta .
+$$
+
+$$
+\rho^{\top}\zeta
+=\bigl(X^{\top}(XX^{\top})^{-1}\vec y\bigr)^{\!\top}\zeta
+=\vec y^{\top}(XX^{\top})^{-1}X\zeta
+=\vec y^{\top}(XX^{\top})^{-1}\,0
+=0 .
+$$
+
+$$
+\Longrightarrow\;
+\|\beta\|_{2}^{2}
+=\|\rho\|_{2}^{2}+\|\zeta\|_{2}^{2}
+\;\ge\;\|\rho\|_{2}^{2}.
+$$
+so
+$$
+\boxed{\;\|\rho\|_{2}\le\|\beta\|_{2}\;}
+$$
 \end{answer}
